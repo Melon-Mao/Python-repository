@@ -32,13 +32,13 @@ else: pass
 print (f"You have {lives} lives left.") if guess != x else x
 while guess != x and lives > 0:
     guess = int(input(f"Try again:"))
-    lives -= 1
+    lives -= 1 if guess != x else x
     if guess > x:
         print(f"Your guess was too high")
     elif guess < x:
         print(f"Your guess was too low")
     else: pass
-    print(f"You have {lives} lives left.") if lives > 0 else x
+    print(f"You have {lives} lives left.") if lives > 0 and guess != x else x
 
 
 if lives > 0:
